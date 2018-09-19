@@ -1,0 +1,152 @@
+body{
+        display: grid;
+        height: 100vh;
+        margin: 0;
+        grid-template-rows: 50px 620px auto 620px auto 620px 70px auto;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+                        "header"
+                        "pic1"
+                        "group1"
+                        "pic2"
+                        "group2"
+                        "pic3"
+                        "subFooter"
+                        "bigFooter"
+
+        }
+
+
+
+
+
+
+
+
+header{
+    background-color: red;
+    grid-area: header;
+    text-align: center;
+    display: grid;
+    flex-direction: row;
+    justify-content: space-between;
+    grid-template-rows: 1fr;
+    grid-template-columns: 10% 10% 1fr 10% 12%;
+    grid-template-areas: "down search brand cart signIn";
+
+}
+.dropdown{
+    grid-area: down;
+    display: flex;
+
+}
+.search{
+    display: flex;
+    grid-area: search;
+}
+.brand{
+    grid-area: brand;
+    display: flex;
+
+}
+.cart{
+    grid-area: cart;
+    display: flex;
+
+}
+.signIn{
+    grid-area: signIn;
+    display: flex;
+
+}
+.jumbo{
+    background-color: darkgray;
+    height: 300px;
+}
+.text{
+    background-color: grey;
+}
+
+section{
+    display: grid;
+    background-color: blue;
+    height: 425px;;
+    margin: 5%;
+    text-align: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas:    "productA"
+                            "productB"
+                            "productC"
+                            "productD";
+}
+.group1{
+    grid-area: group1;
+}
+.group2{
+    grid-area: group2;
+}
+.product1{
+    grid-area: productA;
+}
+.product2{
+    grid-area: productB;
+}
+.product3{
+    grid-area: productC;
+}
+.product4{
+    grid-area: productD;
+}
+.pic1{
+    grid-area: pic1;
+}
+.pic2{
+    grid-area: pic2;
+}
+.pic3{
+    grid-area: pic3;
+}
+.subfooter{
+    background-color: pink;
+    grid-area: subFooter;
+}
+.bigFooter{
+    background-color: lightblue;
+    grid-area: bigFooter;
+}
+
+@media screen and (min-width: 540px){
+    section{
+        display: grid;
+        background-color: blue;
+        height: 425px;;
+        margin: 5%;
+        text-align: center;
+        grid-template-columns:  1fr 1fr;
+        grid-template-rows:     1fr 1fr;
+        grid-template-areas:    "productA productB"
+                                "productC productD";
+    }
+
+    .product1{
+        grid-area: productA;
+    }
+    .product2{
+        grid-area: productB;
+    }
+    .product3{
+        grid-area: productC;
+    }
+    .product4{
+        grid-area: productD;
+    }
+}
+
+/* @media screen and (min-width:767px){
+    .jumbo{
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 
+    }
+} */
