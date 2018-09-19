@@ -2,7 +2,7 @@ body{
         display: grid;
         height: 100vh;
         margin: 0;
-        grid-template-rows: 50px 620px auto 620px auto 620px 70px auto;
+        grid-template-rows: 50px 620px auto 620px auto 620px 70px 60px;
         grid-template-columns: 1fr;
         grid-template-areas:
                         "header"
@@ -17,61 +17,22 @@ body{
         }
 
 
-
-
-
-
-
-
 header{
-    background-color: red;
+    background-color: grey;
     grid-area: header;
-    text-align: center;
     display: grid;
     flex-direction: row;
     justify-content: space-between;
     grid-template-rows: 1fr;
-    grid-template-columns: 10% 10% 1fr 10% 12%;
+    grid-template-columns: 5% 5% auto 5% 5%;
     grid-template-areas: "down search brand cart signIn";
+    align-items: center;
+
 
 }
-.dropdown{
-    grid-area: down;
-    display: flex;
-
-}
-.search{
-    display: flex;
-    grid-area: search;
-}
-.brand{
-    grid-area: brand;
-    display: flex;
-
-}
-.cart{
-    grid-area: cart;
-    display: flex;
-
-}
-.signIn{
-    grid-area: signIn;
-    display: flex;
-
-}
-.jumbo{
-    background-color: darkgray;
-    height: 300px;
-}
-.text{
-    background-color: grey;
-}
-
 section{
     display: grid;
-    background-color: blue;
-    height: 425px;;
-    margin: 5%;
+    margin: 5% auto;
     text-align: center;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
@@ -79,6 +40,29 @@ section{
                             "productB"
                             "productC"
                             "productD";
+}
+.dropdown,.search,.brand,.cart,.signIn{
+    display: flex;
+}
+.dropdown{
+    grid-area: down;
+}
+.search{
+    grid-area: search;
+}
+.brand{
+    grid-area: brand;
+    text-align: center;
+    margin: auto 40px;
+
+}
+.cart{
+    grid-area: cart;
+
+}
+.signIn{
+    grid-area: signIn;
+
 }
 .group1{
     grid-area: group1;
@@ -114,13 +98,36 @@ section{
 .bigFooter{
     background-color: lightblue;
     grid-area: bigFooter;
+}   
+.pics{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 60% 40%;
+    grid-template-areas: "image"
+                        "imageText";
 }
-
+.jumbo{
+    background-image: url("http://www.fillmurray.com/400/225");
+    background-size: cover;
+    height: 100%;
+    grid-area: image;
+    margin: 0;
+}
+.jumboText{
+    background-color: cyan;
+    grid-area: imageText;
+    height: 100%;
+}
+.product1, .product2, .product3, .product4{
+    background-image: url("http://www.fillmurray.com/300/314");
+    background-size: 100%;
+    height: 314px; 
+    width: 300px;  
+    margin: 5%;
+}
 @media screen and (min-width: 540px){
     section{
         display: grid;
-        background-color: blue;
-        height: 425px;;
         margin: 5%;
         text-align: center;
         grid-template-columns:  1fr 1fr;
@@ -128,7 +135,6 @@ section{
         grid-template-areas:    "productA productB"
                                 "productC productD";
     }
-
     .product1{
         grid-area: productA;
     }
@@ -141,12 +147,80 @@ section{
     .product4{
         grid-area: productD;
     }
+    .product1, .product2, .product3, .product4{
+        background-image: url("http://www.fillmurray.com/250/280");
+        height: 400px;
+        width: 400px;
+        margin: 5%;
+    
+    }
+    .jumbo{
+        background-image: url("http://www.fillmurray.com/410/230");
+        height: 100%;
+        width: 100%;
+    }
 }
 
-/* @media screen and (min-width:767px){
-    .jumbo{
+@media screen and (min-width:760px){
+    
+    .pics{
         display: grid;
         grid-template-rows: 1fr;
-        grid-template-columns: 
+        grid-template-columns: 60% 40%;
+        grid-template-areas: "image imageText";
     }
-} */
+    .jumbo{
+        background-image: url("http://www.fillmurray.com/410/230");
+        grid-area: image;
+        height: 100%;
+        width: 100%;
+    }
+    .jumboText{
+        grid-area: imageText;
+    }
+
+}
+
+@media screen and (min-width: 1080px){
+    section{
+        display: grid;
+        height: 425px;
+        margin: 5%;
+        text-align: center;
+        grid-template-columns:  1fr 1fr 1fr 1fr;
+        grid-template-rows:     1fr;
+        grid-template-areas:    "productA productB productC productD";
+        justify-content: space-between;
+        align-content: center;
+        grid-gap: 5%;
+
+        }
+
+    .product1, .product2, .product3, .product4{
+        background-image: url("http://www.fillmurray.com/320/320");
+        height: auto;
+        width: 100%;
+    
+    }
+    .product1{
+        grid-area: productA;
+    }
+    .product2{
+        grid-area: productB;
+    }
+    .product3{
+        grid-area: productC;
+    }
+    .product4{
+        grid-area: productD;
+    }
+    .jumbo{
+        background-image: url("http://www.fillmurray.com/480/375");
+        height: 620px;
+        width: 100%;
+    }
+    pics{
+        width: 90%;
+    }
+
+}
